@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c81672a3ebf4d0f942b60f9c1296b56, type: 3}
+  m_Name: Default Advices For Loading Screen
+  m_EditorClassIdentifier: Assembly-CSharp::ggStrider.Shared.Scripts.Runtime.Core.UI.LoadingScreens.Additional.AdvicesForLoadingScreenSO
+  <Advices>k__BackingField:
+  - Some advice appears here
+  <SpriteWithSizes>k__BackingField:
+  - <Sprite>k__BackingField: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+    <SizeInCanvas>k__BackingField: {x: 500, y: 500}
