@@ -15,59 +15,59 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Audio.Services
     
     public abstract class BaseAudioService : IAudioService
     {
-        private readonly AudioLibrarySO _library;
-        private readonly AudioMixerGroupsSO _mixerGroups;
-        private readonly AudioSource _musicSource;
-        private readonly AudioSource _sfxSource;
+        protected readonly AudioLibrarySO Library;
+        protected readonly AudioMixerGroupsSO MixerGroups;
+        protected readonly AudioSource MusicSource;
+        protected readonly AudioSource SfxSource;
 
         protected BaseAudioService(AudioServiceDependencies dependencies)
         {
-            _library = dependencies.Library;
-            _mixerGroups = dependencies.MixerGroups;
+            Library = dependencies.Library;
+            MixerGroups = dependencies.MixerGroups;
 
-            _musicSource = dependencies.MusicSource;
-            _musicSource.outputAudioMixerGroup = dependencies.MixerGroups.Music;
+            MusicSource = dependencies.MusicSource;
+            MusicSource.outputAudioMixerGroup = dependencies.MixerGroups.Music;
 
-            _sfxSource = dependencies.SfxSource;
-            _sfxSource.outputAudioMixerGroup = dependencies.MixerGroups.Sfx;
+            SfxSource = dependencies.SfxSource;
+            SfxSource.outputAudioMixerGroup = dependencies.MixerGroups.Sfx;
         }
 
         public virtual void PlaySfx(string key)
         {
-            var entry = _library.Get(key);
+            var entry = Library.Get(key);
             if (entry == null)
             {
                 Debug.LogWarning($"AudioService: sfx key '{key}' not found");
                 return;
             }
 
-            _sfxSource.pitch = entry.GetPitch();
-            _sfxSource.PlayOneShot(entry.Clip, entry.Volume);
+            SfxSource.pitch = entry.GetPitch();
+            SfxSource.PlayOneShot(entry.Clip, entry.Volume);
         }
 
         public virtual void PlayMusic(string key)
         {
-            var entry = _library.Get(key);
+            var entry = Library.Get(key);
             if (entry == null)
             {
                 Debug.LogWarning($"AudioService: music key '{key}' not found");
                 return;
             }
 
-            if (_musicSource.clip == entry.Clip && _musicSource.isPlaying)
+            if (MusicSource.clip == entry.Clip && MusicSource.isPlaying)
                 return;
 
-            _musicSource.clip = entry.Clip;
-            _musicSource.volume = entry.Volume;
-            _musicSource.pitch = entry.GetPitch();
-            _musicSource.loop = entry.Loop;
-            _musicSource.Play();
+            MusicSource.clip = entry.Clip;
+            MusicSource.volume = entry.Volume;
+            MusicSource.pitch = entry.GetPitch();
+            MusicSource.loop = entry.Loop;
+            MusicSource.Play();
         }
 
-        public virtual void StopMusic() => _musicSource.Stop();
+        public virtual void StopMusic() => MusicSource.Stop();
 
-        public virtual void SetSfxVolume(float volume) => _mixerGroups.SetSfxVolume(volume);
-        public virtual void SetMusicVolume(float volume) => _mixerGroups.SetMusicVolume(volume);
-        public virtual void MuteAll(bool mute) => _mixerGroups.MuteAll(mute);
+        public virtual void SetSfxVolume(float volume) => MixerGroups.SetSfxVolume(volume);
+        public virtual void SetMusicVolume(float volume) => MixerGroups.SetMusicVolume(volume);
+        public virtual void MuteAll(bool mute) => MixerGroups.MuteAll(mute);
     }
 }
