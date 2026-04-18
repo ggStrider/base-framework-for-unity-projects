@@ -32,7 +32,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Audio.Services
             _sfxSource.outputAudioMixerGroup = dependencies.MixerGroups.Sfx;
         }
 
-        public void PlaySfx(string key)
+        public virtual void PlaySfx(string key)
         {
             var entry = _library.Get(key);
             if (entry == null)
@@ -45,7 +45,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Audio.Services
             _sfxSource.PlayOneShot(entry.Clip, entry.Volume);
         }
 
-        public void PlayMusic(string key)
+        public virtual void PlayMusic(string key)
         {
             var entry = _library.Get(key);
             if (entry == null)
@@ -64,10 +64,10 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Audio.Services
             _musicSource.Play();
         }
 
-        public void StopMusic() => _musicSource.Stop();
+        public virtual void StopMusic() => _musicSource.Stop();
 
-        public void SetSfxVolume(float volume) => _mixerGroups.SetSfxVolume(volume);
-        public void SetMusicVolume(float volume) => _mixerGroups.SetMusicVolume(volume);
-        public void MuteAll(bool mute) => _mixerGroups.MuteAll(mute);
+        public virtual void SetSfxVolume(float volume) => _mixerGroups.SetSfxVolume(volume);
+        public virtual void SetMusicVolume(float volume) => _mixerGroups.SetMusicVolume(volume);
+        public virtual void MuteAll(bool mute) => _mixerGroups.MuteAll(mute);
     }
 }
