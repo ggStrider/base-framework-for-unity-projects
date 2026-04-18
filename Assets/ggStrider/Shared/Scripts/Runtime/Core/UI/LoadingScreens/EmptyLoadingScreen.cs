@@ -5,12 +5,12 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.UI.LoadingScreens
 {
     public class EmptyLoadingScreen : MonoBehaviour, ILoadingScreen
     {
-        public UniTask OnLoadingScene()
+        public UniTask FadeToLoadingScreen()
         {
             return UniTask.CompletedTask;
         }
 
-        public UniTask OnSceneLoaded()
+        public UniTask UnfadeFromLoadingScreen()
         {
             return UniTask.CompletedTask;
         }

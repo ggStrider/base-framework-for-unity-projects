@@ -4,7 +4,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.UI.LoadingScreens
 {
     public interface ILoadingScreen
     {
-        public UniTask OnLoadingScene();
-        public UniTask OnSceneLoaded();
+        public UniTask FadeToLoadingScreen();
+        public UniTask UnfadeFromLoadingScreen();
     }
 }

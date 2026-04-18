@@ -216,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ggStrider.Shared.Scripts.Runtime.Features.Misc.EndlessRotator
   _target: {fileID: 45202814486334016}
   _ignoreTimeScale: 1
-  _rotateTo: {x: 0, y: 0, z: 360}
+  _rotateTo: {x: 0, y: 0, z: -180}
   _timeToRotate: 2
   _ease: 1
 --- !u!1 &4157457655170069013
@@ -447,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &132546592200858981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -487,4 +487,5 @@ MonoBehaviour:
   _adviceLabel: {fileID: 8367574472660769837}
   _fadeToOverlayDuration: 3
   _fadeToShowAdviceDuration: 2
+  _parentOfAllLoadingScreen: {fileID: 5013741350649749751}
   _advices: {fileID: 11400000, guid: e7d383abcd045ce7cbe375dd5d388753, type: 2}

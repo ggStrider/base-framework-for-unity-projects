@@ -14,7 +14,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.UI.LoadingScreens
         [Space]
         [SerializeField] private Image _blackScreen;
 
-        public async UniTask OnLoadingScene()
+        public async UniTask FadeToLoadingScreen()
         {
             try
             {
@@ -26,7 +26,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.UI.LoadingScreens
             }
         }
 
-        public async UniTask OnSceneLoaded()
+        public async UniTask UnfadeFromLoadingScreen()
         {
             try
             {    _blackScreen.color = Color.black;

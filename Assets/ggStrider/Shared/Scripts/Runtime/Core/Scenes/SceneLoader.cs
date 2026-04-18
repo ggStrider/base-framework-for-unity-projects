@@ -18,11 +18,11 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Scenes
         {
             try
             {
-                await _loadingScreen.OnLoadingScene();
+                await _loadingScreen.FadeToLoadingScreen();
                 UniTask loading = SceneManager.LoadSceneAsync(sceneToLoad.SceneFileName).ToUniTask();
                 await loading;
                 
-                _loadingScreen.OnSceneLoaded().Forget();
+                _loadingScreen.UnfadeFromLoadingScreen().Forget();
             }
             catch (OperationCanceledException)
             {

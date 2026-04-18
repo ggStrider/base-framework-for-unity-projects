@@ -13,21 +13,29 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.UI.LoadingScreens
     {
         [SerializeField] private Image _overlay;
 
-        [Space] [SerializeField] private CanvasGroup _parentOfAdvices;
+        [Space]
+        [SerializeField] private CanvasGroup _parentOfAdvices;
         [SerializeField] private Image _adviceImage;
         [SerializeField] private TextMeshProUGUI _adviceLabel;
 
-        [Space] [SerializeField] private float _fadeToOverlayDuration = 3f;
+        [Space]
+        [SerializeField] private float _fadeToOverlayDuration = 3f;
         [SerializeField] private float _fadeToShowAdviceDuration = 2f;
 
-        [Space] [SerializeField] private AdvicesForLoadingScreenSO _advices;
+        [Space] 
+        [SerializeField] private GameObject _parentOfAllLoadingScreen;
 
-        public async UniTask OnLoadingScene()
+        [Space]
+        [SerializeField] private AdvicesForLoadingScreenSO _advices;
+
+        public async UniTask FadeToLoadingScreen()
         {
             try
             {
+                _parentOfAllLoadingScreen.SetActive(true);
+
                 RefreshAdvice();
-                
+
                 _overlay.color = Color.clear;
                 await _overlay.DOColor(Color.black, _fadeToOverlayDuration)
                     .SetEase(Ease.Linear)
@@ -46,22 +54,25 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.UI.LoadingScreens
             }
         }
 
-        public async UniTask OnSceneLoaded()
+        public async UniTask UnfadeFromLoadingScreen()
         {
             try
             {
                 _overlay.color = Color.black;
-                await _overlay.DOColor(Color.clear, _fadeToOverlayDuration)
-                    .SetEase(Ease.Linear)
-                    .AsyncWaitForCompletion()
-                    .AsUniTask()
-                    .AttachExternalCancellation(destroyCancellationToken);
 
                 await _parentOfAdvices.DOFade(0, _fadeToShowAdviceDuration)
                     .SetEase(Ease.Linear)
                     .AsyncWaitForCompletion()
                     .AsUniTask()
                     .AttachExternalCancellation(destroyCancellationToken);
+
+                await _overlay.DOColor(Color.clear, _fadeToOverlayDuration)
+                    .SetEase(Ease.Linear)
+                    .AsyncWaitForCompletion()
+                    .AsUniTask()
+                    .AttachExternalCancellation(destroyCancellationToken);
+
+                _parentOfAllLoadingScreen.SetActive(false);
             }
             catch (OperationCanceledException)
             {
@@ -86,7 +97,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.UI.LoadingScreens
             {
                 ggDebug.Error("Sprite with size is null!");
             }
-            
+
             var adviceText = _advices.GetRandomAdvice();
             _adviceLabel.text = adviceText;
         }

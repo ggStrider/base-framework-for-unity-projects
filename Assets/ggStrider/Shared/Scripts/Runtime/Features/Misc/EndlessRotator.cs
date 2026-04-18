@@ -9,7 +9,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Features.Misc
         [SerializeField] private bool _ignoreTimeScale = true;
         
         [Space]
-        [SerializeField] private Vector3 _rotateTo = new(0, 0, 360);
+        [SerializeField] private Vector3 _rotateTo = new(0, 0, -180);
         [SerializeField] private float _timeToRotate = 2f;
         [SerializeField] private Ease _ease = Ease.Linear;
 
