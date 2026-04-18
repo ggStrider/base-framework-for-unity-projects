@@ -1,8 +1,18 @@
+using System;
 using ggStrider.Shared.Scripts.Runtime.Core.Audio.Data;
 using UnityEngine;
 
 namespace ggStrider.Shared.Scripts.Runtime.Core.Audio.Services
 {
+    [Serializable]
+    public struct AudioServiceDependencies
+    {
+        public AudioLibrarySO Library;
+        public AudioMixerGroupsSO MixerGroups;
+        public AudioSource MusicSource;
+        public AudioSource SfxSource;
+    }
+    
     public abstract class BaseAudioService : IAudioService
     {
         private readonly AudioLibrarySO _library;
@@ -10,20 +20,16 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Audio.Services
         private readonly AudioSource _musicSource;
         private readonly AudioSource _sfxSource;
 
-        protected BaseAudioService(
-            AudioLibrarySO library,
-            AudioMixerGroupsSO mixerGroups,
-            AudioSource musicSource,
-            AudioSource sfxSource)
+        protected BaseAudioService(AudioServiceDependencies dependencies)
         {
-            _library = library;
-            _mixerGroups = mixerGroups;
+            _library = dependencies.Library;
+            _mixerGroups = dependencies.MixerGroups;
 
-            _musicSource = musicSource;
-            _musicSource.outputAudioMixerGroup = mixerGroups.Music;
+            _musicSource = dependencies.MusicSource;
+            _musicSource.outputAudioMixerGroup = dependencies.MixerGroups.Music;
 
-            _sfxSource = sfxSource;
-            _sfxSource.outputAudioMixerGroup = mixerGroups.Sfx;
+            _sfxSource = dependencies.SfxSource;
+            _sfxSource.outputAudioMixerGroup = dependencies.MixerGroups.Sfx;
         }
 
         public void PlaySfx(string key)

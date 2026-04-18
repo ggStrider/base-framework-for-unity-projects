@@ -19,6 +19,8 @@ namespace ggStrider.Shared.Scripts.Runtime.Bootstrap
         [SerializeField] private Canvas _canvasWhereInstantiateUI;
         [SerializeField] private PrefabInterfaceReference<ILoadingScreen> _loadingScreenPrefab;
 
+        [Space] [SerializeField] private AudioServiceDependencies _audioServiceDependencies;
+
         public override void InstallBindings()
         {
             SignalBusInstaller.Install(Container);
@@ -57,6 +59,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Bootstrap
             Container.Bind<IAudioService>()
                 .To<AudioService>()
                 .AsSingle()
+                .WithArguments(_audioServiceDependencies)
                 .NonLazy();
         }
 
