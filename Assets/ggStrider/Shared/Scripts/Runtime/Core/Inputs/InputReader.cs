@@ -12,7 +12,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Inputs
 
         #region Maps
 
-        public InputPlayerMap PlayerInputMap { get; private set; } = new InputPlayerMap();
+        public PlayerInputMap PlayerInputMap { get; private set; } = new PlayerInputMap();
         public UIInputMap UIInputMap { get; private set; } = new UIInputMap();
 
         #endregion
@@ -25,6 +25,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Inputs
             GiveDependenciesToAllMaps();
 
             SwitchMapTo(PlayerInputMap);
+            _playerMap.Enable();
         }
 
         public void Dispose()

@@ -32,25 +32,23 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Misc
 
         #region Layers
 
+        // TODO: Log if layer is invalid (eg doesnt exist)
         public static class Layers
         {
-            public static readonly Layer Player = new(layerName: "Player", layerIndex: 3);
+            public static readonly Layer Player = new(name: "Player", index: 3);
 
             public readonly struct Layer
             {
-                public string LayerName { get; }
-                public int LayerIndex { get; }
+                public string Name { get; }
+                public int Index { get; }
 
-                public LayerMask LayerMask { get; }
+                public LayerMask Mask { get; }
 
-                public Layer(string layerName, int layerIndex)
+                public Layer(string name, int index)
                 {
-                    LayerName = layerName;
-                    LayerIndex = layerIndex;
-                    LayerMask = LayerMask.NameToLayer(layerName);
-                    
-                    if (LayerMask.value == -1)
-                        ggDebug.Error($"[{nameof(ConstKeys)}] Layer \"{layerName}\" not found. Check Edit -> Project Settings -> Tags and Layers");
+                    Name = name;
+                    Index = index;
+                    Mask = 1 << Index;
                 }
             }
         }

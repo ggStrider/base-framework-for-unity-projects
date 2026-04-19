@@ -1,6 +1,6 @@
 namespace ggStrider.Shared.Scripts.Runtime.Core.Inputs.Maps
 {
-    public class InputPlayerMap : BaseInputMap
+    public class PlayerInputMap : BaseInputMap
     {
         public override void Subscribe()
         {
