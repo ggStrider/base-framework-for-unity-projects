@@ -21,6 +21,24 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
             vec.z = newZ;
             return vec;
         }
+        
+        public static Vector3 AddX(this Vector3 vec, float add)
+        {
+            vec.x += add;
+            return vec;
+        }
+        
+        public static Vector3 AddY(this Vector3 vec, float add)
+        {
+            vec.y += add;
+            return vec;
+        }
+        
+        public static Vector3 AddZ(this Vector3 vec, float add)
+        {
+            vec.z += add;
+            return vec;
+        }
 
         public static Vector3 DirectionTo(this Vector3 from, Vector3 to)
         {

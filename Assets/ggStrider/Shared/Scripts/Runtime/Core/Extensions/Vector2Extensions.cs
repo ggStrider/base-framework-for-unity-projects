@@ -15,6 +15,18 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
             vec.y = newY;
             return vec;
         }
+        
+        public static Vector2 AddX(this Vector2 vec, float add)
+        {
+            vec.x += add;
+            return vec;
+        }
+        
+        public static Vector2 AddY(this Vector2 vec, float add)
+        {
+            vec.y += add;
+            return vec;
+        }
 
         public static Vector2 DirectionTo(this Vector2 from, Vector2 to)
         {
