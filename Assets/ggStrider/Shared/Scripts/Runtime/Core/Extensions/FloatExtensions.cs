@@ -18,6 +18,11 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
             return true;
         }
 
+        public static bool ApproximatelyZero(this float a)
+        {
+            return Mathf.Approximately(a, 0);
+        }
+
         public static bool IsOpposite(this float a, float b)
         {
             if (a >= 0 && b >= 0)
