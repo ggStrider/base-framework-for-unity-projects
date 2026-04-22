@@ -35,49 +35,37 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
 
             public TransformPositionWorld SetX(float x)
             {
-                var p = _t.position;
-                p.x = x;
-                _t.position = p;
+                _t.position = _t.position.WithX(x);
                 return this;
             }
 
             public TransformPositionWorld SetY(float y)
             {
-                var p = _t.position;
-                p.y = y;
-                _t.position = p;
+                _t.position = _t.position.WithY(y);
                 return this;
             }
 
             public TransformPositionWorld SetZ(float z)
             {
-                var p = _t.position;
-                p.z = z;
-                _t.position = p;
+                _t.position = _t.position.WithZ(z);
                 return this;
             }
 
             public TransformPositionWorld AddX(float x)
             {
-                var p = _t.position;
-                p.x += x;
-                _t.position = p;
+                _t.position = _t.position.AddX(x);
                 return this;
             }
 
             public TransformPositionWorld AddY(float y)
             {
-                var p = _t.position;
-                p.y += y;
-                _t.position = p;
+                _t.position = _t.position.AddY(y);
                 return this;
             }
 
             public TransformPositionWorld AddZ(float z)
             {
-                var p = _t.position;
-                p.z += z;
-                _t.position = p;
+                _t.position = _t.position.AddZ(z);
                 return this;
             }
         }
@@ -94,49 +82,37 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
 
             public TransformPositionLocal SetX(float x)
             {
-                var p = _t.localPosition;
-                p.x = x;
-                _t.localPosition = p;
+                _t.localPosition = _t.localPosition.WithX(x);
                 return this;
             }
 
             public TransformPositionLocal SetY(float y)
             {
-                var p = _t.localPosition;
-                p.y = y;
-                _t.localPosition = p;
+                _t.localPosition = _t.localPosition.WithY(y);
                 return this;
             }
 
             public TransformPositionLocal SetZ(float z)
             {
-                var p = _t.localPosition;
-                p.z = z;
-                _t.localPosition = p;
+                _t.localPosition = _t.localPosition.WithZ(z);
                 return this;
             }
 
             public TransformPositionLocal AddX(float x)
             {
-                var p = _t.localPosition;
-                p.x += x;
-                _t.localPosition = p;
+                _t.localPosition = _t.localPosition.AddX(x);
                 return this;
             }
 
             public TransformPositionLocal AddY(float y)
             {
-                var p = _t.localPosition;
-                p.y += y;
-                _t.localPosition = p;
+                _t.localPosition = _t.localPosition.AddY(y);
                 return this;
             }
 
             public TransformPositionLocal AddZ(float z)
             {
-                var p = _t.localPosition;
-                p.z += z;
-                _t.localPosition = p;
+                _t.localPosition = _t.localPosition.AddZ(z);
                 return this;
             }
         }
@@ -167,49 +143,37 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
 
             public TransformRotationWorld SetX(float x)
             {
-                var e = _t.eulerAngles;
-                e.x = x;
-                _t.eulerAngles = e;
+                _t.eulerAngles = _t.eulerAngles.WithX(x);
                 return this;
             }
 
             public TransformRotationWorld SetY(float y)
             {
-                var e = _t.eulerAngles;
-                e.y = y;
-                _t.eulerAngles = e;
+                _t.eulerAngles = _t.eulerAngles.WithY(y);
                 return this;
             }
 
             public TransformRotationWorld SetZ(float z)
             {
-                var e = _t.eulerAngles;
-                e.z = z;
-                _t.eulerAngles = e;
+                _t.eulerAngles = _t.eulerAngles.WithZ(z);
                 return this;
             }
 
             public TransformRotationWorld AddX(float x)
             {
-                var e = _t.eulerAngles;
-                e.x += x;
-                _t.eulerAngles = e;
+                _t.eulerAngles = _t.eulerAngles.AddX(x);
                 return this;
             }
 
             public TransformRotationWorld AddY(float y)
             {
-                var e = _t.eulerAngles;
-                e.y += y;
-                _t.eulerAngles = e;
+                _t.eulerAngles = _t.eulerAngles.AddY(y);
                 return this;
             }
 
             public TransformRotationWorld AddZ(float z)
             {
-                var e = _t.eulerAngles;
-                e.z += z;
-                _t.eulerAngles = e;
+                _t.eulerAngles = _t.eulerAngles.AddZ(z);
                 return this;
             }
         }
@@ -226,49 +190,37 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
 
             public TransformRotationLocal SetX(float x)
             {
-                var e = _t.localEulerAngles;
-                e.x = x;
-                _t.localEulerAngles = e;
+                _t.localEulerAngles = _t.localEulerAngles.WithX(x);
                 return this;
             }
 
             public TransformRotationLocal SetY(float y)
             {
-                var e = _t.localEulerAngles;
-                e.y = y;
-                _t.localEulerAngles = e;
+                _t.localEulerAngles = _t.localEulerAngles.WithY(y);
                 return this;
             }
 
             public TransformRotationLocal SetZ(float z)
             {
-                var e = _t.localEulerAngles;
-                e.z = z;
-                _t.localEulerAngles = e;
+                _t.localEulerAngles = _t.localEulerAngles.WithZ(z);
                 return this;
             }
 
             public TransformRotationLocal AddX(float x)
             {
-                var e = _t.localEulerAngles;
-                e.x += x;
-                _t.localEulerAngles = e;
+                _t.localEulerAngles = _t.localEulerAngles.AddX(x);
                 return this;
             }
 
             public TransformRotationLocal AddY(float y)
             {
-                var e = _t.localEulerAngles;
-                e.y += y;
-                _t.localEulerAngles = e;
+                _t.localEulerAngles = _t.localEulerAngles.AddY(y);
                 return this;
             }
 
             public TransformRotationLocal AddZ(float z)
             {
-                var e = _t.localEulerAngles;
-                e.z += z;
-                _t.localEulerAngles = e;
+                _t.localEulerAngles = _t.localEulerAngles.AddY(z);
                 return this;
             }
         }
@@ -287,49 +239,37 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
 
             public TransformLocalScale SetX(float x)
             {
-                var s = _t.localScale;
-                s.x = x;
-                _t.localScale = s;
+                _t.localScale = _t.localScale.WithX(x);
                 return this;
             }
 
             public TransformLocalScale SetY(float y)
             {
-                var s = _t.localScale;
-                s.y = y;
-                _t.localScale = s;
+                _t.localScale = _t.localScale.WithY(y);
                 return this;
             }
 
             public TransformLocalScale SetZ(float z)
             {
-                var s = _t.localScale;
-                s.z = z;
-                _t.localScale = s;
+                _t.localScale = _t.localScale.WithZ(z);
                 return this;
             }
 
             public TransformLocalScale AddX(float x)
             {
-                var s = _t.localScale;
-                s.x += x;
-                _t.localScale = s;
+                _t.localScale = _t.localScale.AddX(x);
                 return this;
             }
 
             public TransformLocalScale AddY(float y)
             {
-                var s = _t.localScale;
-                s.y += y;
-                _t.localScale = s;
+                _t.localScale = _t.localScale.AddY(y);
                 return this;
             }
 
             public TransformLocalScale AddZ(float z)
             {
-                var s = _t.localScale;
-                s.z += z;
-                _t.localScale = s;
+                _t.localScale = _t.localScale.AddZ(z);
                 return this;
             }
         }
