@@ -33,5 +33,11 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
 
             return true;
         }
+
+        public static float Remap(this float fromCurrent, float fromMin, float fromMax,
+            float toMin, float toMax)
+        {
+            return Mathf.Lerp(toMin, toMax, Mathf.InverseLerp(fromMin, fromMax, fromCurrent));
+        }
     }
 }
