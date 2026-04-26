@@ -5,7 +5,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
 {
     public static class ListExtensions
     {
-        public static bool TryGetRandomElement<T>(this List<T> list, out T result)
+        public static bool TryGetRandomElement<T>(this IList<T> list, out T result)
         {
             result = default;
 
@@ -18,7 +18,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
             return true;
         }
         
-        public static T GetRandomElement<T>(this List<T> list)
+        public static T GetRandomElement<T>(this IList<T> list)
         {
             if (list.TryGetRandomElement(out var t))
                 return t;
@@ -26,7 +26,7 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
             return default;
         }
 
-        public static bool IsNullOrEmpty<T>(this List<T> list)
+        public static bool IsNullOrEmpty<T>(this IList<T> list)
         {
             return list == null || list.Count == 0;
         }

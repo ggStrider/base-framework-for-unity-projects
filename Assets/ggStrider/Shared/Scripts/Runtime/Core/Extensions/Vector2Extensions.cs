@@ -2,6 +2,12 @@ using UnityEngine;
 
 namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
 {
+    public enum Axis2D
+    {
+        X = 0,
+        Y = 1,
+    };
+    
     public static class Vector2Extensions
     {
         public static Vector2 WithX(this Vector2 vec, float newX)
@@ -44,6 +50,18 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
         public static bool IsCloseTo(this Vector2 from, Vector2 to, float maxDistance)
         {
             return (to - from).sqrMagnitude <= maxDistance * maxDistance;
+        }
+
+        public static Vector2 Swap(this Vector2 vec, Axis2D a, Axis2D b)
+        {
+            (vec[(int)a], vec[(int)b]) = (vec[(int)b], vec[(int)a]);
+            return vec;
+        }
+        
+        public static bool Approximately(this Vector2 source, Vector2 approx)
+        {
+            return Mathf.Approximately(source.x, approx.x) &&
+                   Mathf.Approximately(source.y, approx.y);
         }
     }
 }
