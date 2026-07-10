@@ -2,6 +2,7 @@ using ggStrider.Shared.Scripts.Runtime.Core.Audio.Services;
 using ggStrider.Shared.Scripts.Runtime.Core.Data;
 using ggStrider.Shared.Scripts.Runtime.Core.Data.Services;
 using ggStrider.Shared.Scripts.Runtime.Core.GameStates.Signals;
+using ggStrider.Shared.Scripts.Runtime.Core.Inputs;
 using ggStrider.Shared.Scripts.Runtime.Core.Scenes;
 using ggStrider.Shared.Scripts.Runtime.Core.UI.LoadingScreens;
 using ggStrider.Shared.Scripts.Runtime.Core.UI.Panels.Managers;
@@ -60,6 +61,10 @@ namespace ggStrider.Shared.Scripts.Runtime.Bootstrap
                 .To<AudioService>()
                 .AsSingle()
                 .WithArguments(_audioServiceDependencies)
+                .NonLazy();
+
+            Container.BindInterfacesAndSelfTo<InputReader>()
+                .AsSingle()
                 .NonLazy();
         }
 
