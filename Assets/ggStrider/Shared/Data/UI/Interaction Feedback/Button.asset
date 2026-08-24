@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf3497117ef406eb3c9a4ccbbfa26e5, type: 3}
+  m_Name: Button
+  m_EditorClassIdentifier: Assembly-CSharp::ggStrider.Shared.Scripts.Runtime.Core.UI.Animations.UIFeedbackSettingsSO
+  _duration: 0.15
+  _ease: 6
+  _onHover:
+  - <Kind>k__BackingField: 1
+    <ScaleDelta>k__BackingField: {x: 0.25, y: 0.25, z: 0.25}
+    <RotationDelta>k__BackingField: {x: 0, y: 0, z: 0}
+  - <Kind>k__BackingField: 2
+    <ScaleDelta>k__BackingField: {x: 0, y: 0, z: 0}
+    <RotationDelta>k__BackingField: {x: 0, y: 0, z: 15}
+  _onPress:
+  - <Kind>k__BackingField: 1
+    <ScaleDelta>k__BackingField: {x: -0.1, y: -0.1, z: -0.1}
+    <RotationDelta>k__BackingField: {x: 0, y: 0, z: 0}

@@ -18,5 +18,21 @@ namespace ggStrider.Shared.Scripts.Runtime.Core.Extensions
         {
             return source ? 1f : 0f;
         }
+
+        public static bool IntToBool(this int i)
+        {
+            if (i > 0)
+                return true;
+
+            return false;
+        }
+
+        public static bool FloatToBool(this float f)
+        {
+            if (f > 0)
+                return true;
+
+            return false;
+        }
     }
 }
